@@ -27,7 +27,7 @@ namespace WebApi.Controllers
     public abstract class DefaultApiController : ControllerBase
     { 
         /// <summary>
-        /// 
+        /// Get a list of the available addresses
         /// </summary>
         /// <response code="200"></response>
         [HttpGet]

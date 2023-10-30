@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <AssemblyName>WebApi</AssemblyName>
     <PackageId>WebApi</PackageId>
-    <UserSecretsId>ebdee219-ef02-4ab5-ab72-19c7436e86ce</UserSecretsId>
+    <UserSecretsId>cc95df2a-6f32-4013-87d9-584fa1ff8f57</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
