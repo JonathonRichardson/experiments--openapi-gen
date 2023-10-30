@@ -1,0 +1,14 @@
+README.md
+WebApi.sln
+build.bat
+build.sh
+src/WebApi/.gitignore
+src/WebApi/Attributes/ValidateModelStateAttribute.cs
+src/WebApi/Authentication/ApiAuthentication.cs
+src/WebApi/Controllers/DefaultApi.cs
+src/WebApi/Converters/CustomEnumConverter.cs
+src/WebApi/Formatters/InputFormatterStream.cs
+src/WebApi/Models/Address.cs
+src/WebApi/OpenApi/TypeExtensions.cs
+src/WebApi/WebApi.csproj
+src/WebApi/WebApi.nuspec

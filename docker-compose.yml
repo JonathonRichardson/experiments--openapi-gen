@@ -4,3 +4,26 @@ services:
     image: apicurio/apicurito-ui:1.2.4
     ports:
       - 9066:8080
+
+  generate-api-server-template:
+        image: 'openapitools/openapi-generator-cli'
+        command: [
+            'generate',
+            '-i', '/volumes/input/specs/api.yaml',
+            '-g', 'aspnetcore',
+            '--additional-properties=aspnetCoreVersion=6.0',
+            '--additional-properties=buildTarget=library',
+            '--additional-properties=isLibrary=true',
+            '--additional-properties=nullableReferenceTypes=true',
+            '--additional-properties=operationIsAsync=true',
+            '--additional-properties=packageName=WebApi',
+            '--additional-properties=operationResultTask=true',
+            '--additional-properties=swashbuckleVersion=6.0.0',
+            '--additional-properties=packageGuid={58ED180F-5D42-4978-BFFF-80379E15E761}',
+            #'-t', '/volumes/input/templates/templates/',
+            '-o', '/volumes/output/dotnet-server',
+        ]
+        volumes:
+            - ./specs/internal/web-api/web-api.spec.yml:/volumes/input/specs/api.yaml:ro
+            #- ./services/tools-api-code-generator/templates:/input/templates/templates
+            - ./lib/csharp/.generated/ServerTemplate:/volumes/output/dotnet-server
