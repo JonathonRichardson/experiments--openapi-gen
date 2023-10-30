@@ -1,0 +1,6 @@
+version: '3'
+services:
+  api-designer:
+    image: apicurio/apicurito-ui:1.2.4
+    ports:
+      - 9066:8080
