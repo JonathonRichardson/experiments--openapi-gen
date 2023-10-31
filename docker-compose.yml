@@ -19,11 +19,13 @@ services:
             '--additional-properties=packageName=WebApi',
             '--additional-properties=operationResultTask=true',
             '--additional-properties=swashbuckleVersion=6.0.0',
+            '--additional-properties=useSwashbuckle=true',
+            '--additional-properties=userSecretsGuid=f99f8654-5e4b-456e-b7bf-031e3c46bf79',
             '--additional-properties=packageGuid={58ED180F-5D42-4978-BFFF-80379E15E761}',
-            '-t', '/volumes/input/templates/',
+            '-t', '/volumes/input/templates/aspnetcore/3.0',
             '-o', '/volumes/output/dotnet-server',
         ]
         volumes:
             - ./specs/internal/web-api/web-api.spec.yml:/volumes/input/specs/api.yaml:ro
-            - ./services/dev-tools/sdk-generator/templates/aspnetcore-server-3.0:/volumes/input/templates/
+            - ./services/dev-tools/sdk-generator/templates/aspnetcore-server-3.0:/volumes/input/templates/aspnetcore/3.0
             - ./lib/csharp/.generated/ServerTemplate:/volumes/output/dotnet-server

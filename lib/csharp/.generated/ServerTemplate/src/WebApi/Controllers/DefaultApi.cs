@@ -16,6 +16,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Swashbuckle.AspNetCore.Annotations;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using WebApi.Attributes;
 using WebApi.Models;
 
@@ -34,8 +36,9 @@ namespace WebApi.Controllers
         [HttpGet]
         [Route("/addresses")]
         [ValidateModelState]
-        [ProducesResponseType(statusCode: 200, type: typeof(List<Address>))]
-        public abstract Task<IActionResult> AddressesGet();
+        [SwaggerOperation("AddressesGet")]
+        [SwaggerResponse(statusCode: 200, type: typeof(List<Address>), description: "")]
+        public abstract Task<ActionResult<List<Address>>> AddressesGet();
 
         /// <summary>
         /// 
@@ -46,6 +49,7 @@ namespace WebApi.Controllers
         [Route("/addresses")]
         [Consumes("application/json")]
         [ValidateModelState]
-        public abstract Task<IActionResult> SubmitNewAddress([FromBody]Address address);
+        [SwaggerOperation("SubmitNewAddress")]
+        public abstract Task<ActionResult<>> SubmitNewAddress([FromBody]Address address);
     }
 }

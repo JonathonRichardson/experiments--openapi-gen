@@ -7,6 +7,8 @@ src/WebApi/Attributes/ValidateModelStateAttribute.cs
 src/WebApi/Authentication/ApiAuthentication.cs
 src/WebApi/Controllers/DefaultApi.cs
 src/WebApi/Converters/CustomEnumConverter.cs
+src/WebApi/Filters/BasePathFilter.cs
+src/WebApi/Filters/GeneratePathParamsValidationFilter.cs
 src/WebApi/Formatters/InputFormatterStream.cs
 src/WebApi/Models/Address.cs
 src/WebApi/OpenApi/TypeExtensions.cs
